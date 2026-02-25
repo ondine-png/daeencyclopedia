@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 220" role="img" aria-labelledby="t d">
+  <title id="t">Dae logo</title>
+  <desc id="d">Glowing orange sun over dark background with the word Dae.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#06070a"/>
+      <stop offset="70%" stop-color="#101015"/>
+      <stop offset="100%" stop-color="#17151b"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="50%" cy="33%" r="46%">
+      <stop offset="0%" stop-color="#ffd068" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#ff8a1f" stop-opacity="0.9"/>
+      <stop offset="70%" stop-color="#e85a0a" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sunCore" cx="50%" cy="28%" r="62%">
+      <stop offset="0%" stop-color="#fff6d6"/>
+      <stop offset="52%" stop-color="#ffb53a"/>
+      <stop offset="82%" stop-color="#e46d11"/>
+      <stop offset="100%" stop-color="#41210b"/>
+    </radialGradient>
+    <linearGradient id="fadeMask" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="white"/>
+      <stop offset="66%" stop-color="white"/>
+      <stop offset="100%" stop-color="black"/>
+    </linearGradient>
+    <filter id="softBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+
+  <rect width="180" height="220" fill="url(#bg)"/>
+
+  <ellipse cx="90" cy="82" rx="70" ry="55" fill="url(#sunGlow)" filter="url(#softBlur)" opacity="0.9"/>
+
+  <g mask="url(#maskSun)">
+    <circle cx="90" cy="88" r="62" fill="url(#sunCore)"/>
+  </g>
+
+  <defs>
+    <mask id="maskSun">
+      <rect width="180" height="220" fill="url(#fadeMask)"/>
+    </mask>
+  </defs>
+
+  <rect y="150" width="180" height="70" fill="url(#bg)" opacity="0.88"/>
+
+  <text
+    x="90"
+    y="188"
+    text-anchor="middle"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="34"
+    fill="#f3ead8"
+    letter-spacing="0.2"
+  >Dae</text>
+</svg>

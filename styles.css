@@ -52,39 +52,13 @@ body {
   gap: 1rem;
 }
 
-.site-mark {
-  margin: 0;
-  font-size: 1.05rem;
-  font-weight: bold;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #ff9a1f;
-  background: linear-gradient(180deg, #fff2bd 0%, #ffd36a 22%, #ff9b1f 55%, #d85d05 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow:
-    0 0 2px rgba(255, 170, 40, 0.9),
-    0 0 6px rgba(255, 129, 0, 0.6),
-    0 0 14px rgba(255, 111, 0, 0.35);
-  position: relative;
-}
-
-.site-mark::after {
-  content: "DAE";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  color: transparent;
-  background-image:
-    radial-gradient(circle at 18% 30%, rgba(255, 255, 255, 0.95) 0 6%, transparent 7%),
-    radial-gradient(circle at 43% 58%, rgba(255, 238, 182, 0.9) 0 5%, transparent 6%),
-    radial-gradient(circle at 68% 22%, rgba(255, 255, 255, 0.9) 0 5%, transparent 6%),
-    radial-gradient(circle at 84% 62%, rgba(255, 231, 160, 0.85) 0 4%, transparent 5%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  opacity: 0.75;
+.site-logo {
+  display: block;
+  width: 60px;
+  height: auto;
+  border: 1px solid rgba(0, 0, 0, 0.22);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
+  background: #0b0b0d;
 }
 
 .site-meta {
@@ -443,6 +417,14 @@ body {
 
   .utility-bar {
     grid-template-columns: 1fr;
+  }
+
+  .masthead-top {
+    align-items: center;
+  }
+
+  .site-logo {
+    width: 50px;
   }
 
   .summary {
