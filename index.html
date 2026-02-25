@@ -47,14 +47,28 @@
         </div>
       </section>
 
+      <nav class="alpha-bar" aria-label="Browse by letter">
+        <span class="alpha-label">Browse:</span>
+        <div id="alphaNav" class="alpha-links"></div>
+      </nav>
+
       <main class="content-grid">
         <aside class="sidebar" aria-label="Reference information">
           <section class="sidebar-box">
-            <h2>About This Index</h2>
+            <h2>About</h2>
             <p>
               Browse patterns by name or search across all fields including behaviors, origins,
               evidence notes, and evidence-based interventions.
             </p>
+          </section>
+
+          <section class="sidebar-box">
+            <h2>Browse</h2>
+            <ul class="sidebar-list links">
+              <li><a href="#cards">All entries</a></li>
+              <li><a href="#alphaNav">A–Z index</a></li>
+              <li><a href="#searchInput">Search</a></li>
+            </ul>
           </section>
 
           <section class="sidebar-box" aria-live="polite">
@@ -84,9 +98,19 @@
             <p class="summary-note">Entries are searchable across all columns from the source table.</p>
           </section>
 
+          <section class="list-header" aria-hidden="true">
+            <p>Title and definition</p>
+            <p>Evidence / prevalence notes</p>
+          </section>
+
           <section id="cards" class="cards" aria-label="Pattern entries"></section>
         </section>
       </main>
+
+      <footer class="site-footer">
+        <p>DAE Encyclopedia of Patterns</p>
+        <p>Reference index for internal team use and contribution.</p>
+      </footer>
     </div>
 
     <template id="cardTemplate">

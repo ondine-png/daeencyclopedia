@@ -4,6 +4,7 @@ const state = {
   evidence: "all",
   sort: "name-asc",
   compact: false,
+  alpha: "all",
 };
 
 const els = {
@@ -15,6 +16,7 @@ const els = {
   resultCount: document.querySelector("#resultCount"),
   cards: document.querySelector("#cards"),
   cardTemplate: document.querySelector("#cardTemplate"),
+  alphaNav: document.querySelector("#alphaNav"),
 };
 
 const EVIDENCE_ORDER = ["strong", "moderate", "emerging", "mixed", "unclear"];
@@ -30,6 +32,7 @@ async function init() {
     const tsv = await response.text();
     state.rows = parseTsv(tsv).map((row, index) => normalizeRow(row, index));
     populateEvidenceOptions(state.rows);
+    renderAlphaNav();
     render();
   } catch (error) {
     console.error(error);
@@ -62,9 +65,11 @@ function bindEvents() {
     state.query = "";
     state.evidence = "all";
     state.sort = "name-asc";
+    state.alpha = "all";
     els.searchInput.value = "";
     els.evidenceFilter.value = "all";
     els.sortSelect.value = "name-asc";
+    syncAlphaUI();
     render();
   });
 
@@ -160,9 +165,51 @@ function getFilteredRows() {
     .filter((row) => {
       const matchesQuery = !state.query || row.searchable.includes(state.query);
       const matchesEvidence = state.evidence === "all" || row.evidenceBucket === state.evidence;
-      return matchesQuery && matchesEvidence;
+      const firstChar = (row.Pattern || "").trim().charAt(0).toUpperCase();
+      const matchesAlpha = state.alpha === "all" || firstChar === state.alpha;
+      return matchesQuery && matchesEvidence && matchesAlpha;
     })
     .sort(sortRows);
+}
+
+function renderAlphaNav() {
+  if (!els.alphaNav) return;
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+  const fragment = document.createDocumentFragment();
+
+  const allBtn = document.createElement("button");
+  allBtn.type = "button";
+  allBtn.className = "alpha-link is-active";
+  allBtn.dataset.letter = "all";
+  allBtn.textContent = "All";
+  fragment.append(allBtn);
+
+  for (const letter of letters) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "alpha-link";
+    btn.dataset.letter = letter;
+    btn.textContent = letter;
+    fragment.append(btn);
+  }
+
+  els.alphaNav.replaceChildren(fragment);
+  els.alphaNav.addEventListener("click", onAlphaClick);
+}
+
+function onAlphaClick(event) {
+  const button = event.target.closest(".alpha-link");
+  if (!button) return;
+  state.alpha = button.dataset.letter || "all";
+  syncAlphaUI();
+  render();
+}
+
+function syncAlphaUI() {
+  if (!els.alphaNav) return;
+  els.alphaNav.querySelectorAll(".alpha-link").forEach((button) => {
+    button.classList.toggle("is-active", button.dataset.letter === state.alpha);
+  });
 }
 
 function sortRows(a, b) {
