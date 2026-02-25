@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pattern Index | DAE Encyclopedia of Patterns</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="masthead" role="banner">
+        <div class="masthead-top">
+          <p class="site-meta"><a class="text-link" href="index.html">Dae</a> / Pattern Index</p>
+        </div>
+        <h1>DAE Encyclopedia of Patterns</h1>
+        <p class="masthead-subtitle">
+          An indexed reference for recurring psychological, relational, and behavioral patterns,
+          with concise definitions, evidence notes, and intervention summaries.
+        </p>
+      </header>
+
+      <section class="utility-bar" aria-label="Search and filters">
+        <label class="search-wrap">
+          <span class="sr-only">Search patterns and descriptions</span>
+          <input id="searchInput" type="search" placeholder="Search entries..." />
+        </label>
+        <label>
+          Evidence
+          <select id="evidenceFilter">
+            <option value="all">All</option>
+          </select>
+        </label>
+        <label>
+          Sort
+          <select id="sortSelect">
+            <option value="name-asc">Pattern (A-Z)</option>
+            <option value="name-desc">Pattern (Z-A)</option>
+            <option value="evidence">Evidence strength</option>
+          </select>
+        </label>
+        <div class="actions">
+          <button id="toggleDensity" type="button">Compact view</button>
+          <button id="clearFilters" type="button" class="ghost">Reset</button>
+        </div>
+      </section>
+
+      <nav class="alpha-bar" aria-label="Browse by letter">
+        <span class="alpha-label">Browse:</span>
+        <div id="alphaNav" class="alpha-links"></div>
+      </nav>
+
+      <main class="content-grid">
+        <aside class="sidebar" aria-label="Reference information">
+          <section class="sidebar-box">
+            <h2>About</h2>
+            <p>
+              Browse patterns by name or search across all fields including behaviors, origins,
+              evidence notes, and evidence-based interventions.
+            </p>
+          </section>
+
+          <section class="sidebar-box">
+            <h2>Browse</h2>
+            <ul class="sidebar-list links">
+              <li><a href="#cards">All entries</a></li>
+              <li><a href="#alphaNav">A–Z index</a></li>
+              <li><a href="#searchInput">Search</a></li>
+            </ul>
+          </section>
+
+          <section class="sidebar-box" aria-live="polite">
+            <h2>Results</h2>
+            <p><strong id="resultCount">0</strong> entries shown</p>
+            <p class="sidebar-note">Educational reference only. Not a diagnostic or treatment tool.</p>
+          </section>
+
+          <section class="sidebar-box">
+            <h2>Entry Fields</h2>
+            <ul class="sidebar-list">
+              <li>Definition</li>
+              <li>Observable behaviors</li>
+              <li>Function and short-term benefits</li>
+              <li>Long-term costs / harms</li>
+              <li>Origins / etiology</li>
+              <li>Prevalence / population notes</li>
+              <li>Evidence strength</li>
+              <li>Interventions</li>
+            </ul>
+          </section>
+        </aside>
+
+        <section class="main-column">
+          <section class="summary" aria-live="polite">
+            <p><strong>Pattern Index</strong></p>
+            <p class="summary-note">Entries are searchable across all columns from the source table.</p>
+          </section>
+
+          <section class="list-header" aria-hidden="true">
+            <p>Title and definition</p>
+            <p>Evidence / prevalence notes</p>
+          </section>
+
+          <section id="cards" class="cards" aria-label="Pattern entries"></section>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>DAE Encyclopedia of Patterns</p>
+        <p>Reference index for internal team use and contribution.</p>
+      </footer>
+    </div>
+
+    <template id="cardTemplate">
+      <article class="card">
+        <div class="card-head">
+          <div>
+            <h2 class="card-title">
+              <a class="card-title-link" href="#"></a>
+            </h2>
+            <p class="card-definition"></p>
+          </div>
+          <div class="summary-tags">
+            <span class="badge evidence-badge"></span>
+            <span class="badge prevalence-badge"></span>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

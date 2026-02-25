@@ -3,133 +3,130 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DAE Encyclopedia of Patterns</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <title>Dae Encyclopedia of Patterns</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="page-shell">
       <header class="masthead" role="banner">
         <div class="masthead-top">
-          <p class="site-meta">Digital Archive Edition</p>
+          <p class="site-meta">Dae</p>
         </div>
         <h1>DAE Encyclopedia of Patterns</h1>
         <p class="masthead-subtitle">
-          An indexed reference for recurring psychological, relational, and behavioral patterns,
-          with concise definitions, evidence notes, and intervention summaries.
+          Structured, evidence-informed reference for psychological, behavioral, cognitive,
+          emotional, and relational patterns.
         </p>
       </header>
 
-      <section class="utility-bar" aria-label="Search and filters">
-        <label class="search-wrap">
-          <span class="sr-only">Search patterns and descriptions</span>
-          <input id="searchInput" type="search" placeholder="Search entries..." />
-        </label>
-        <label>
-          Evidence
-          <select id="evidenceFilter">
-            <option value="all">All</option>
-          </select>
-        </label>
-        <label>
-          Sort
-          <select id="sortSelect">
-            <option value="name-asc">Pattern (A-Z)</option>
-            <option value="name-desc">Pattern (Z-A)</option>
-            <option value="evidence">Evidence strength</option>
-          </select>
-        </label>
-        <div class="actions">
-          <button id="toggleDensity" type="button">Compact view</button>
-          <button id="clearFilters" type="button" class="ghost">Reset</button>
-        </div>
-      </section>
-
-      <nav class="alpha-bar" aria-label="Browse by letter">
-        <span class="alpha-label">Browse:</span>
-        <div id="alphaNav" class="alpha-links"></div>
-      </nav>
-
-      <main class="content-grid">
-        <aside class="sidebar" aria-label="Reference information">
+      <main class="home-layout">
+        <aside class="sidebar" aria-label="Site sections">
           <section class="sidebar-box">
             <h2>About</h2>
-            <p>
-              Browse patterns by name or search across all fields including behaviors, origins,
-              evidence notes, and evidence-based interventions.
-            </p>
+            <ul class="sidebar-list links">
+              <li><a href="#what-is-dae">What Is DAE?</a></li>
+              <li><a href="#browse-categories">Browse by Category</a></li>
+              <li><a href="#browse-az">A–Z Browse</a></li>
+              <li><a href="#contributing">Contributing</a></li>
+            </ul>
           </section>
 
           <section class="sidebar-box">
             <h2>Browse</h2>
             <ul class="sidebar-list links">
-              <li><a href="#cards">All entries</a></li>
-              <li><a href="#alphaNav">A–Z index</a></li>
-              <li><a href="#searchInput">Search</a></li>
+              <li><a href="patterns.html">Open Full Pattern Index</a></li>
+              <li><a href="patterns.html?sort=evidence">Browse by evidence strength</a></li>
+              <li><a href="patterns.html?q=trauma">Trauma-related patterns</a></li>
+              <li><a href="patterns.html?q=relationship">Relational patterns</a></li>
             </ul>
-          </section>
-
-          <section class="sidebar-box" aria-live="polite">
-            <h2>Results</h2>
-            <p><strong id="resultCount">0</strong> entries shown</p>
-            <p class="sidebar-note">Educational reference only. Not a diagnostic or treatment tool.</p>
           </section>
 
           <section class="sidebar-box">
-            <h2>Entry Fields</h2>
-            <ul class="sidebar-list">
-              <li>Definition</li>
-              <li>Observable behaviors</li>
-              <li>Function and short-term benefits</li>
-              <li>Long-term costs / harms</li>
-              <li>Origins / etiology</li>
-              <li>Prevalence / population notes</li>
-              <li>Evidence strength</li>
-              <li>Interventions</li>
-            </ul>
+            <h2>Notice</h2>
+            <p>Educational reference only. Not a diagnostic or treatment tool.</p>
           </section>
         </aside>
 
-        <section class="main-column">
-          <section class="summary" aria-live="polite">
-            <p><strong>Pattern Index</strong></p>
-            <p class="summary-note">Entries are searchable across all columns from the source table.</p>
+        <section class="main-column home-main">
+          <section id="what-is-dae" class="home-section">
+            <h2>What Is the DAE Encyclopedia of Patterns?</h2>
+            <p>
+              The DAE Encyclopedia of Patterns is a structured, evidence-informed reference library
+              of common psychological, behavioral, cognitive, emotional, and relational patterns.
+              It is designed to help users quickly compare patterns by definition, observable
+              behaviors, short-term psychological function, long-term costs, likely origins,
+              evidence strength, and evidence-based intervention options.
+            </p>
+            <p class="home-actions">
+              <a class="text-link" href="patterns.html">Open the full index</a>
+            </p>
           </section>
 
-          <section class="list-header" aria-hidden="true">
-            <p>Title and definition</p>
-            <p>Evidence / prevalence notes</p>
+          <section id="browse-categories" class="home-section">
+            <h2>Browse by Category</h2>
+            <div class="category-grid">
+              <a class="category-link" href="patterns.html?q=rumination">Cognitive Patterns</a>
+              <a class="category-link" href="patterns.html?q=emotion">Emotional Regulation & Dysregulation</a>
+              <a class="category-link" href="patterns.html?q=avoidance">Behavioral Coping & Avoidance</a>
+              <a class="category-link" href="patterns.html?q=attachment">Relational / Attachment Dynamics</a>
+              <a class="category-link" href="patterns.html?q=trauma">Trauma & Threat Responses</a>
+              <a class="category-link" href="patterns.html?q=self">Self-Concept, Shame & Self-Evaluation</a>
+              <a class="category-link" href="patterns.html?q=planning">Planning, Motivation & Action Patterns</a>
+              <a class="category-link" href="patterns.html">All Categories (Full Index)</a>
+            </div>
+            <p class="section-note">
+              Categories are editorial browse paths for navigation and may overlap across entries.
+            </p>
           </section>
 
-          <section id="cards" class="cards" aria-label="Pattern entries"></section>
+          <section id="browse-az" class="home-section">
+            <h2>A–Z Browse</h2>
+            <p class="section-note">Jump into the full index filtered by the first letter of the pattern name.</p>
+            <div class="alpha-links home-alpha">
+              <a class="alpha-link alpha-link-anchor is-active" href="patterns.html?alpha=all">All</a>
+              <a class="alpha-link alpha-link-anchor" href="patterns.html?alpha=A">A</a>
+              <a class="alpha-link alpha-link-anchor" href="patterns.html?alpha=B">B</a>
+              <a class="alpha-link alpha-link-anchor" href="patterns.html?alpha=C">C</a>
+              <a class="alpha-link alpha-link-anchor" href="patterns.html?alpha=D">D</a>
+              <a class="alpha-link alpha-link-anchor" href="patterns.html?alpha=E">E</a>
+              <a class="alpha-link alpha-link-anchor" href="patterns.html?alpha=F">F</a>
+              <a class="alpha-link alpha-link-anchor" href="patterns.html?alpha=G">G</a>
+              <a class="alpha-link alpha-link-anchor" href="patterns.html?alpha=H">H</a>
+              <a class="alpha-link alpha-link-anchor" href="patterns.html?alpha=I">I</a>
+              <a class="alpha-link alpha-link-anchor" href="patterns.html?alpha=J">J</a>
+              <a class="alpha-link alpha-link-anchor" href="patterns.html?alpha=K">K</a>
+              <a class="alpha-link alpha-link-anchor" href="patterns.html?alpha=L">L</a>
+              <a class="alpha-link alpha-link-anchor" href="patterns.html?alpha=M">M</a>
+              <a class="alpha-link alpha-link-anchor" href="patterns.html?alpha=N">N</a>
+              <a class="alpha-link alpha-link-anchor" href="patterns.html?alpha=O">O</a>
+              <a class="alpha-link alpha-link-anchor" href="patterns.html?alpha=P">P</a>
+              <a class="alpha-link alpha-link-anchor" href="patterns.html?alpha=Q">Q</a>
+              <a class="alpha-link alpha-link-anchor" href="patterns.html?alpha=R">R</a>
+              <a class="alpha-link alpha-link-anchor" href="patterns.html?alpha=S">S</a>
+              <a class="alpha-link alpha-link-anchor" href="patterns.html?alpha=T">T</a>
+              <a class="alpha-link alpha-link-anchor" href="patterns.html?alpha=U">U</a>
+              <a class="alpha-link alpha-link-anchor" href="patterns.html?alpha=V">V</a>
+              <a class="alpha-link alpha-link-anchor" href="patterns.html?alpha=W">W</a>
+              <a class="alpha-link alpha-link-anchor" href="patterns.html?alpha=X">X</a>
+              <a class="alpha-link alpha-link-anchor" href="patterns.html?alpha=Y">Y</a>
+              <a class="alpha-link alpha-link-anchor" href="patterns.html?alpha=Z">Z</a>
+            </div>
+          </section>
+
+          <section id="contributing" class="home-section">
+            <h2>Contributing</h2>
+            <p>
+              This project is maintained for internal team contributors. Use the repository workflow
+              to propose revisions, add sources, improve evidence summaries, and refine entry wording.
+            </p>
+          </section>
         </section>
       </main>
 
       <footer class="site-footer">
-        <p>DAE Encyclopedia of Patterns</p>
-        <p>Reference index for internal team use and contribution.</p>
+        <p>Dae Encyclopedia of Patterns</p>
+        <p>Educational reference only. Not a diagnostic or treatment tool.</p>
       </footer>
     </div>
-
-    <template id="cardTemplate">
-      <article class="card">
-        <div class="card-head">
-          <div>
-            <h2 class="card-title">
-              <a class="card-title-link" href="#"></a>
-            </h2>
-            <p class="card-definition"></p>
-          </div>
-          <div class="summary-tags">
-            <span class="badge evidence-badge"></span>
-            <span class="badge prevalence-badge"></span>
-          </div>
-        </div>
-      </article>
-    </template>
-
-    <script type="module" src="app.js"></script>
   </body>
 </html>

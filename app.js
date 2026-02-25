@@ -33,6 +33,7 @@ async function init() {
     state.rows = parseTsv(tsv).map((row, index) => normalizeRow(row, index));
     populateEvidenceOptions(state.rows);
     renderAlphaNav();
+    applyUrlParams();
     render();
   } catch (error) {
     console.error(error);
@@ -42,6 +43,38 @@ async function init() {
         <p>Preview this page through a local server (for example: <code>python3 -m http.server</code>) or ensure the file exists in the same folder.</p>
       </div>
     `;
+  }
+}
+
+function applyUrlParams() {
+  const params = new URLSearchParams(window.location.search);
+  const q = params.get("q");
+  const sort = params.get("sort");
+  const evidence = params.get("evidence");
+  const alpha = params.get("alpha");
+
+  if (q) {
+    state.query = q.trim().toLowerCase();
+    els.searchInput.value = q;
+  }
+
+  if (sort && ["name-asc", "name-desc", "evidence"].includes(sort)) {
+    state.sort = sort;
+    els.sortSelect.value = sort;
+  }
+
+  if (evidence) {
+    const allowed = [...els.evidenceFilter.options].map((option) => option.value);
+    if (allowed.includes(evidence)) {
+      state.evidence = evidence;
+      els.evidenceFilter.value = evidence;
+    }
+  }
+
+  if (alpha) {
+    const normalizedAlpha = alpha.toUpperCase();
+    state.alpha = normalizedAlpha === "ALL" ? "all" : normalizedAlpha;
+    syncAlphaUI();
   }
 }
 
