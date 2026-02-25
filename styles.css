@@ -26,15 +26,12 @@ body {
 
 body {
   background:
-    radial-gradient(circle at 20% 36%, rgba(100, 115, 255, 0.75) 0 12%, rgba(100, 115, 255, 0) 25%),
-    radial-gradient(circle at 39% 58%, rgba(255, 0, 20, 0.9) 0 14%, rgba(255, 0, 20, 0) 30%),
-    radial-gradient(circle at 62% 22%, rgba(184, 0, 255, 0.7) 0 10%, rgba(184, 0, 255, 0) 24%),
-    radial-gradient(circle at 73% 55%, rgba(112, 156, 123, 0.9) 0 20%, rgba(112, 156, 123, 0) 36%),
-    radial-gradient(circle at 82% 22%, rgba(187, 31, 232, 0.65) 0 10%, rgba(187, 31, 232, 0) 22%),
-    radial-gradient(circle at 18% 20%, rgba(116, 35, 129, 0.55) 0 8%, rgba(116, 35, 129, 0) 20%),
-    radial-gradient(circle at 18% 84%, rgba(118, 154, 118, 0.55) 0 8%, rgba(118, 154, 118, 0) 20%),
-    radial-gradient(circle at 58% 86%, rgba(214, 0, 200, 0.75) 0 10%, rgba(214, 0, 200, 0) 24%),
-    linear-gradient(180deg, #a59853 0%, #9f8f4d 35%, #a9755f 100%);
+    linear-gradient(30deg, rgba(214, 205, 181, 0.72) 1px, transparent 1px),
+    linear-gradient(150deg, rgba(214, 205, 181, 0.72) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(214, 205, 181, 0.5) 1px, transparent 1px),
+    linear-gradient(#f7f7f4, #f7f7f4);
+  background-size: 62px 36px, 62px 36px, 62px 36px, auto;
+  background-position: 0 0, 0 0, 31px 18px, 0 0;
   color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
   line-height: 1.35;
