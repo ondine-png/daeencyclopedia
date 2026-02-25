@@ -25,7 +25,16 @@ body {
 }
 
 body {
-  background: var(--bg);
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.018) 0,
+      rgba(255, 255, 255, 0.018) 1px,
+      rgba(0, 0, 0, 0) 1px,
+      rgba(0, 0, 0, 0) 26px
+    ),
+    radial-gradient(circle at 50% 115%, rgba(160, 120, 90, 0.18), rgba(0, 0, 0, 0) 42%),
+    linear-gradient(180deg, #030304 0%, #08080a 38%, #111114 72%, #1a1a1f 100%);
   color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
   line-height: 1.35;
