@@ -13,7 +13,6 @@
     <div class="page-shell">
       <header class="masthead" role="banner">
         <div class="masthead-top">
-          <p class="site-mark">DAE</p>
           <p class="site-meta">Digital Archive Edition</p>
         </div>
         <h1>DAE Encyclopedia of Patterns</h1>
@@ -85,56 +84,25 @@
             <p class="summary-note">Entries are searchable across all columns from the source table.</p>
           </section>
 
-          <section id="cards" class="cards" aria-label="Pattern cards"></section>
+          <section id="cards" class="cards" aria-label="Pattern entries"></section>
         </section>
       </main>
     </div>
 
     <template id="cardTemplate">
       <article class="card">
-        <details>
-          <summary>
-            <div>
-              <p class="card-kicker">Entry</p>
-              <h2 class="card-title"></h2>
-              <p class="card-definition"></p>
-            </div>
-            <div class="summary-tags">
-              <span class="badge evidence-badge"></span>
-              <span class="badge prevalence-badge"></span>
-            </div>
-          </summary>
-          <div class="card-grid">
-            <section>
-              <h3>Observable behaviors</h3>
-              <p data-field="Typical observable behaviors"></p>
-            </section>
-            <section>
-              <h3>Function + short-term benefits</h3>
-              <p data-field="Psychological function + short-term benefits"></p>
-            </section>
-            <section>
-              <h3>Long-term costs / harms</h3>
-              <p data-field="Long-term costs/harms"></p>
-            </section>
-            <section>
-              <h3>Typical origins / etiology</h3>
-              <p data-field="Typical origins/etiology (developmental, attachment, cognitive)"></p>
-            </section>
-            <section>
-              <h3>Prevalence / population notes</h3>
-              <p data-field="Prevalence / population notes"></p>
-            </section>
-            <section>
-              <h3>Evidence strength + references</h3>
-              <p data-field="Strength of evidence + key references"></p>
-            </section>
-            <section class="full-width">
-              <h3>Evidence-based interventions</h3>
-              <p data-field="Evidence-based interventions (brief; support level)"></p>
-            </section>
+        <div class="card-head">
+          <div>
+            <h2 class="card-title">
+              <a class="card-title-link" href="#"></a>
+            </h2>
+            <p class="card-definition"></p>
           </div>
-        </details>
+          <div class="summary-tags">
+            <span class="badge evidence-badge"></span>
+            <span class="badge prevalence-badge"></span>
+          </div>
+        </div>
       </article>
     </template>
 

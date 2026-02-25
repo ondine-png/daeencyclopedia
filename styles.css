@@ -47,18 +47,9 @@ body {
 
 .masthead-top {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: baseline;
   gap: 1rem;
-}
-
-.site-mark {
-  margin: 0;
-  font-size: 0.95rem;
-  font-weight: bold;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #222;
 }
 
 .site-meta {
@@ -112,7 +103,8 @@ body {
 .search-wrap input:focus,
 .utility-bar select:focus,
 .actions button:focus-visible,
-.card summary:focus-visible {
+.card-title-link:focus-visible,
+.back-link:focus-visible {
   outline: 2px solid rgba(28, 79, 163, 0.35);
   outline-offset: 1px;
 }
@@ -221,65 +213,28 @@ body {
   background: #fff;
 }
 
-.card details {
-  position: relative;
-}
-
-.card summary {
-  list-style: none;
-  cursor: pointer;
-  padding: 0.6rem 2.2rem 0.6rem 0.65rem;
+.card-head {
+  padding: 0.6rem 0.65rem;
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 0.75rem;
   align-items: start;
 }
 
-.card summary::-webkit-details-marker {
-  display: none;
-}
-
-.card summary::after {
-  content: "+";
-  position: absolute;
-  top: 0.55rem;
-  right: 0.55rem;
-  width: 1.15rem;
-  height: 1.15rem;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--line);
-  background: #fafafa;
-  color: #444;
-  font: bold 0.9rem/1 Arial, Helvetica, sans-serif;
-}
-
-.card details[open] summary::after {
-  content: "−";
-}
-
-.card details[open] summary {
-  border-bottom: 1px solid var(--line);
-  background: #fbfbfb;
-}
-
-.card-kicker {
-  margin: 0;
-  color: #666;
-  font: 0.72rem/1 Arial, Helvetica, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
 .card-title {
-  margin: 0.2rem 0 0;
-  color: var(--link);
+  margin: 0;
+  color: inherit;
   font-size: 1.08rem;
   line-height: 1.2;
   font-weight: normal;
 }
 
-.card-title:hover {
+.card-title-link {
+  color: var(--link);
+  text-decoration: none;
+}
+
+.card-title-link:hover {
   color: var(--link-hover);
   text-decoration: underline;
 }
@@ -327,48 +282,8 @@ body {
   color: #4d4472;
 }
 
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.6rem;
-  padding: 0.65rem;
-}
-
-.card-grid section {
-  border: 1px solid #d9d9d9;
-  background: #fff;
-  padding: 0.5rem;
-}
-
-.card-grid .full-width {
-  grid-column: 1 / -1;
-}
-
-.card-grid h3 {
-  margin: 0;
-  font-size: 0.78rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  color: #333;
-  border-bottom: 1px solid #ececec;
-  padding-bottom: 0.22rem;
-}
-
-.card-grid p {
-  margin: 0.38rem 0 0;
-  font-size: 0.88rem;
-  line-height: 1.35;
-  color: #222;
-  white-space: pre-line;
-}
-
 .cards.compact .card-definition {
   display: none;
-}
-
-.cards.compact .card-grid {
-  grid-template-columns: 1fr;
 }
 
 .empty-state {
@@ -389,6 +304,87 @@ body {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+.entry-layout {
+  padding: 0.75rem;
+  background: #fff;
+}
+
+.entry-nav {
+  margin-bottom: 0.75rem;
+}
+
+.back-link {
+  color: var(--link);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.back-link:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+.entry-article {
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.entry-header {
+  border-bottom: 1px solid var(--line);
+  background: #fbfbfb;
+  padding: 0.75rem;
+}
+
+.entry-title {
+  margin: 0;
+  color: var(--link);
+  font-size: 1.35rem;
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+.entry-definition {
+  margin: 0.4rem 0 0;
+  color: #2f2f2f;
+  font-size: 0.95rem;
+}
+
+.entry-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+  padding: 0.65rem;
+}
+
+.entry-field {
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  padding: 0.5rem;
+}
+
+.entry-field.full-width {
+  grid-column: 1 / -1;
+}
+
+.entry-field h3 {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #333;
+  border-bottom: 1px solid #ececec;
+  padding-bottom: 0.22rem;
+}
+
+.entry-field p {
+  margin: 0.38rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.35;
+  color: #222;
+  white-space: pre-line;
 }
 
 @media (max-width: 980px) {
@@ -423,16 +419,12 @@ body {
     align-items: center;
   }
 
-  .site-mark {
-    font-size: 0.9rem;
-  }
-
   .summary {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .card summary {
+  .card-head {
     grid-template-columns: 1fr;
   }
 
@@ -440,7 +432,7 @@ body {
     justify-content: flex-start;
   }
 
-  .card-grid {
+  .entry-fields {
     grid-template-columns: 1fr;
   }
 }

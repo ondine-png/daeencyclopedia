@@ -197,10 +197,10 @@ function render() {
 
   for (const row of rows) {
     const node = els.cardTemplate.content.firstElementChild.cloneNode(true);
-    const details = node.querySelector("details");
-    details.open = false;
-
-    node.querySelector(".card-title").textContent = row.Pattern || "Untitled pattern";
+    const titleLink = node.querySelector(".card-title-link");
+    titleLink.textContent = row.Pattern || "Untitled pattern";
+    titleLink.href = `entry.html?id=${encodeURIComponent(row.id)}`;
+    titleLink.setAttribute("aria-label", `Open entry for ${row.Pattern || "Untitled pattern"}`);
     node.querySelector(".card-definition").textContent = row["Concise definition"] || "";
 
     const evidenceBadge = node.querySelector(".evidence-badge");
@@ -209,11 +209,6 @@ function render() {
 
     const prevalenceBadge = node.querySelector(".prevalence-badge");
     prevalenceBadge.textContent = row.prevalenceBadge;
-
-    node.querySelectorAll("[data-field]").forEach((target) => {
-      const key = target.getAttribute("data-field");
-      target.textContent = row[key] || "—";
-    });
 
     fragment.append(node);
   }
