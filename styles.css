@@ -47,9 +47,36 @@ body {
 
 .masthead-top {
   display: flex;
-  justify-content: flex-end;
-  align-items: baseline;
+  justify-content: flex-start;
+  align-items: center;
   gap: 1rem;
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.site-brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.site-brand-logo {
+  width: 18px;
+  height: 18px;
+  display: block;
+  flex: 0 0 auto;
+}
+
+.site-brand-name {
+  font-size: 0.98rem;
+  line-height: 1;
+  color: #111;
 }
 
 .site-meta {

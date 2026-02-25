@@ -45,7 +45,7 @@ async function init() {
     }
 
     renderEntry(row);
-    document.title = `${row.Pattern} | DAE Encyclopedia of Patterns`;
+    document.title = `${row.Pattern} | Dae Encyclopedia of Patterns`;
   } catch (error) {
     console.error(error);
     renderMessage("Could not load entry data. Make sure patterns.tsv is in the same folder.");
