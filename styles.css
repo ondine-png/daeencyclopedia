@@ -94,8 +94,9 @@ body {
 .masthead-subtitle {
   margin: 0.35rem 0 0;
   color: var(--muted);
-  font-size: 0.84rem;
-  max-width: 78ch;
+  font-size: 0.8rem;
+  max-width: none;
+  white-space: nowrap;
 }
 
 .utility-bar {
@@ -644,6 +645,11 @@ body {
   .site-title-link,
   .site-title-row {
     gap: 0.5rem;
+  }
+
+  .masthead-subtitle {
+    white-space: normal;
+    font-size: 0.82rem;
   }
 
   .summary {
